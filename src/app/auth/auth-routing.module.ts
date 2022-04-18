@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   {
@@ -10,22 +9,27 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginComponent,
+        component: LoginComponent
       },
       {
-        path: 'register',
-        component: RegisterComponent,
+        path: 'registro',
+        component: RegistroComponent
       },
       {
         path: '**',
-        redirectTo: 'login',
-      },
-    ],
-  },
-];
+        redirectTo: 'login'
+      }
+    ]
+  }
+]
+
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [
+    RouterModule.forChild( routes )
+  ],
+  exports: [
+    RouterModule
+  ]
 })
-export class AuthRoutingModule {}
+export class AuthRoutingModule { }
